@@ -2,15 +2,50 @@
 // 你可以在此编辑器中写入代码 
 
 if (shown) {
-	if (card_type == 0) {
-		sprite_index = card_scissor;
-	} else if (card_type == 1) {
-		sprite_index = card_paper;
-	} else if (card_type == 2) {
-		sprite_index = card_stone;
+		//show_debug_message(string(card_type));
+	switch (card_type) {
+		case 0:
+			sprite_index = spr_card_A;
+		break;
+		case 1:
+			sprite_index = _2;
+		break;
+		case 2:
+			sprite_index = _3;
+		break;
+		case 3:
+			sprite_index = _4;
+		break;
+		case 4:
+			sprite_index = _5;
+		break;
+		case 5:
+			sprite_index = _6;
+		break;
+		case 6:
+			sprite_index = _7;
+		break;
+		case 7:
+			sprite_index = _8;
+		break;
+		case 8:
+			sprite_index = _9;
+		break;
+		case 9:
+			sprite_index = _10;
+		break;
+		case 10:
+			sprite_index = spr_card_J;
+		break;
+		case 11:
+			sprite_index = spr_card_Q;
+		break;
+		case 12:
+			sprite_index = spr_card_K;
+		break;
 	}
 } else {
-	sprite_index = card_back;
+	sprite_index = spr_poker_back;
 }
 
 
