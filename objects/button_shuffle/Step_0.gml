@@ -8,6 +8,10 @@ if (card_pile_manager.player_status && card_pile_manager.player_turn && !card_pi
 	
 		if (mouse_check_button(mb_left)) {
 			butt_click = instance_position(mouse_x,mouse_y,self);
+			if (mouse_check_button_pressed(mb_left) && instance_position(mouse_x,mouse_y,self)) {
+			
+				audio_play_sound(click,0,false);
+			}
 			sprite_index = s_ban;
 		}
 		

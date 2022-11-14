@@ -52,8 +52,7 @@ ai_turn = false;
 ai_have_a = false;
 player_have_a = false;
 
-money = 100;
-goal_money = money;
+goal_money = global.money;
 stake = 50;
 // ---- position setting begin -----
 

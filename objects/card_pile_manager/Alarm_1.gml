@@ -39,6 +39,7 @@ if (ai_count < ds_list_size(ai_shown_pile)) {
 	if (ai_point >21) {
 		ds_list_add(textbox_manager.textbox_ls,"PC Busted.");
 	}
+				audio_play_sound(notice,0,false);
 	player_reveal = true;
 }
 

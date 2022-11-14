@@ -19,7 +19,6 @@
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Cards","instances":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_335B4A57","properties":[],"isDnd":false,"objectId":{"name":"card_pile_manager","path":"objects/card_pile_manager/card_pile_manager.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":256.0,"y":160.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_23F15285","properties":[],"isDnd":false,"objectId":{"name":"textbox_manager","path":"objects/textbox_manager/textbox_manager.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":256.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_AF22C79","properties":[],"isDnd":false,"objectId":{"name":"button_suspension","path":"objects/button_suspension/button_suspension.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":756.0,"y":348.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_45FE7D92","properties":[],"isDnd":false,"objectId":{"name":"button_draw","path":"objects/button_draw/button_draw.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":756.0,"y":300.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4C171B11","properties":[],"isDnd":false,"objectId":{"name":"button_shuffle","path":"objects/button_shuffle/button_shuffle.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":756.0,"y":396.0,},
@@ -33,7 +32,6 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_335B4A57","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_23F15285","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_AF22C79","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_45FE7D92","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_4C171B11","path":"rooms/Room1/Room1.yy",},

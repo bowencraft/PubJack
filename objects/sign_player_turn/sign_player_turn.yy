@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "sign_player_turn",
-  "spriteId": {
-    "name": "turn",
-    "path": "sprites/turn/turn.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": false,
   "managed": true,

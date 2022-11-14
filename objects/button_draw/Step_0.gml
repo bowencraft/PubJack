@@ -7,6 +7,8 @@ if (card_pile_manager.player_deal_phase) {
 		sprite_index = draw_hlt;
 		if (mouse_check_button(mb_left)) {
 			butt_click = instance_position(mouse_x,mouse_y,self);
+			
+			audio_play_sound(click,0,false);
 			sprite_index = draw_ban;
 			
 		}

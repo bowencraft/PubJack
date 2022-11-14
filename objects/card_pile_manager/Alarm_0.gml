@@ -29,3 +29,4 @@ ai_choice = card_ai.card_type;
 card_ai.shown = true;
 deal_x += deal_interval;
 ds_list_add(textbox_manager.textbox_ls,"PC show a card.");
+			audio_play_sound(notice,0,false);

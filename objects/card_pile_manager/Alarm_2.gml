@@ -38,7 +38,8 @@ if (player_count < ds_list_size(player_shown_pile)) {
 	ds_list_add(textbox_manager.textbox_ls,"Player's point: " + string(player_point));
 	if (player_point >21) {
 		ds_list_add(textbox_manager.textbox_ls,"You Busted.");
-	}
+	}			
+	audio_play_sound(notice,0,false);
 	player_reveal = true;
 		
 	alarm[3] = 1*room_speed;

@@ -12,3 +12,6 @@ for (var i =0;i<ds_list_size(textbox_ls);i++) {
 draw_text_transformed(764,26,text_content,1,1,0);
 
 
+
+draw_set_font(coin_font);
+draw_text_transformed(858,500,global.money,1,1,0);
