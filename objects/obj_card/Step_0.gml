@@ -5,47 +5,47 @@ if (shown) {
 		//show_debug_message(string(card_type));
 	switch (card_type) {
 		case 0:
-			sprite_index = spr_card_A;
+			sprite_index = card_clubs_A;
 		break;
 		case 1:
-			sprite_index = _2;
+			sprite_index = card_clubs_02;
 		break;
 		case 2:
-			sprite_index = _3;
+			sprite_index = card_clubs_03;
 		break;
 		case 3:
-			sprite_index = _4;
+			sprite_index = card_clubs_04;
 		break;
 		case 4:
-			sprite_index = _5;
+			sprite_index = card_clubs_05;
 		break;
 		case 5:
-			sprite_index = _6;
+			sprite_index = card_clubs_06;
 		break;
 		case 6:
-			sprite_index = _7;
+			sprite_index = card_clubs_07;
 		break;
 		case 7:
-			sprite_index = _8;
+			sprite_index = card_clubs_08;
 		break;
 		case 8:
-			sprite_index = _9;
+			sprite_index = card_clubs_09;
 		break;
 		case 9:
-			sprite_index = _10;
+			sprite_index = card_clubs_10;
 		break;
 		case 10:
-			sprite_index = spr_card_J;
+			sprite_index = card_clubs_J;
 		break;
 		case 11:
-			sprite_index = spr_card_Q;
+			sprite_index = card_clubs_Q;
 		break;
 		case 12:
-			sprite_index = spr_card_K;
+			sprite_index = card_clubs_K;
 		break;
 	}
 } else {
-	sprite_index = spr_poker_back;
+	sprite_index = card_back;
 }
 card_point = card_type +1;
 
