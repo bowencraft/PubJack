@@ -26,12 +26,37 @@ if (timer == 0) {
 		deal_num = amount;
 	
 	}
+	ds_list_add(textbox_manager.textbox_ls,"Welcome to play the");
+	ds_list_add(textbox_manager.textbox_ls,"Pubjack!");
+	
 
 
 }
 // shuffle
+if (timer == 1* room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+	ds_list_add(textbox_manager.textbox_ls,"The stake for this");
+	ds_list_add(textbox_manager.textbox_ls,"round is... 50 Golds!");
 
-if (timer == 1 * room_speed){
+}
+
+if (timer == 3* room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+	ds_list_add(textbox_manager.textbox_ls,"Are you ready?");
+
+}
+if (timer == 4.5* room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+	ds_list_add(textbox_manager.textbox_ls,"Game.. start!");
+}
+
+if (timer == 6* room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+	ds_list_add(textbox_manager.textbox_ls,"PC is the initiative.");
+	ds_list_add(textbox_manager.textbox_ls,"Dealing the cards...");
+}
+
+if (timer == 6.7 * room_speed){
 		audio_play_sound(flipcard,0,false);
 		pile[|0].goal_x = card_1_x;
 		pile[|0].goal_y = card_l1_y;
@@ -41,7 +66,7 @@ if (timer == 1 * room_speed){
 }
 // deal 1
 
-if (timer == 1.2 * room_speed){
+if (timer == 6.9 * room_speed){
 
 		audio_play_sound(flipcard,0,false);
 		pile[|0].goal_x = card_2_x;
@@ -53,7 +78,7 @@ if (timer == 1.2 * room_speed){
 }
 // deal 2
 
-if (timer == 1.4 * room_speed){
+if (timer == 7.1 * room_speed){
 
 		audio_play_sound(flipcard,0,false);
 		pile[|0].goal_x = card_1_x;
@@ -64,7 +89,7 @@ if (timer == 1.4 * room_speed){
 }
 // deal 3
 
-if (timer == 1.6 * room_speed){
+if (timer == 7.3 * room_speed){
 
 		audio_play_sound(flipcard,0,false);
 		pile[|0].goal_x = card_2_x;
@@ -76,17 +101,17 @@ if (timer == 1.6 * room_speed){
 }
 // deal 4
 
-// add a timer here - no
-if (timer == 3 * room_speed) {
-
-		audio_play_sound(flipcard,0,false);
-		player_hand_pile[|0].shown = true;
-		player_hand_pile[|0].dealing = true;
-		player_hand_pile[|1].shown = true;
-		player_hand_pile[|1].dealing = true;
+if (timer == 8 * room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+	ds_list_add(textbox_manager.textbox_ls,"It's PC's turn...");
+		player_turn = false;
+		ai_turn = true;
+		sign_ai_turn.visible = true;
+		sign_player_turn.visible = false;
 }
+// add a timer here - no
 
-if (timer == 3.3 * room_speed) {
+if (timer == 9 * room_speed) {
 	ai_deal = irandom_range(0,1);
 	//ai_deal_pos = ai_deal;
 	if (ai_deal == 0) {
@@ -106,10 +131,33 @@ if (timer == 3.3 * room_speed) {
 	ai_choice = card_ai.card_type;
 	card_ai.shown = true;
 	deal_x += deal_interval;
+	
+		ds_list_add(textbox_manager.textbox_ls," ");
+	ds_list_add(textbox_manager.textbox_ls,"PC show a card!");
+	
 }
 // ai deal stage
 
-if (timer > 3.3 * room_speed) {
+if (timer == 10 * room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+		ds_list_add(textbox_manager.textbox_ls,"It is your turn...");
+		player_turn = true;
+		ai_turn = false;
+		sign_ai_turn.visible = false;
+		sign_player_turn.visible = true;
+		ds_list_add(textbox_manager.textbox_ls," ");
+		ds_list_add(textbox_manager.textbox_ls,"Now you can show a");
+		ds_list_add(textbox_manager.textbox_ls,"card to opponent.");
+		
+		
+		audio_play_sound(flipcard,0,false);
+		player_hand_pile[|0].shown = true;
+		player_hand_pile[|0].dealing = true;
+		player_hand_pile[|1].shown = true;
+		player_hand_pile[|1].dealing = true;
+}
+
+if (timer > 10 * room_speed) {
 	if (mouse_check_button_pressed(mb_left)) {
 		card_click = instance_position(mouse_x,mouse_y,obj_card);
 		if (card_click != noone && card_click.dealing) {
@@ -125,6 +173,8 @@ if (timer > 3.3 * room_speed) {
 			audio_play_sound(flipcard,0,false);
 			player_hand_pile[|0].dealing = false;
 			player_shown_pile[|ds_list_size(player_shown_pile)-1].dealing = false;
+		ds_list_add(textbox_manager.textbox_ls," ");
+			ds_list_add(textbox_manager.textbox_ls,"You show a card!");
 			
 			player_deal_status = true;
 		}
@@ -133,6 +183,32 @@ if (timer > 3.3 * room_speed) {
 	// ai phase
 	if (player_deal_status) {
 		player_deal_status = false;
+		if (ai_status) {
+			ai_timer = 0;
+		} else if (player_status) {
+			player_deal_phase = true;
+		ds_list_add(textbox_manager.textbox_ls," ");
+			ds_list_add(textbox_manager.textbox_ls,"It is your turn...");
+			ds_list_add(textbox_manager.textbox_ls,"You can choose to");
+			ds_list_add(textbox_manager.textbox_ls,"draw or stand.");
+		}
+	}
+	
+	if (ai_timer == 0 * room_speed) {
+		player_turn = false;
+		ai_turn = true;
+		sign_ai_turn.visible = true;
+		sign_player_turn.visible = false;
+	}
+	
+	if (ai_timer == 0.5 * room_speed) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+		ds_list_add(textbox_manager.textbox_ls,"It's PC's turn...");
+	}
+	
+	if (ai_timer == 2 * room_speed) {
+	
+		
 		// ai choose whether continue
 		
 		if (ai_status) {
@@ -140,104 +216,151 @@ if (timer > 3.3 * room_speed) {
 			
 			if (ai_deal == 0) {
 				ai_status = false;
-				show_debug_message("ai choose to stop.");
-			} else 
-			if (ai_deal == 1) {
-					pile[|0].goal_x = card_1_x;
+		ds_list_add(textbox_manager.textbox_ls," ");
+				ds_list_add(textbox_manager.textbox_ls,"PC choose to stand.");
+			} 
+			else if (ai_deal == 1) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+				ds_list_add(textbox_manager.textbox_ls,"PC choose to draw");
+				ds_list_add(textbox_manager.textbox_ls,"another card.");
+				
+					pile[|0].goal_x = card_1_x + 0.5*handcard_interval;
 					pile[|0].goal_y = card_l1_y;
 		
 					ds_list_add(ai_hand_pile,pile[|0]);
 					ds_list_delete(pile,0);
-				//if (ai_deal_pos == 0) {
-				//	pile[|0].goal_x = card_1_x;
-				//	pile[|0].goal_y = card_l1_y;
-		
-				//	ds_list_add(ai_hand_pile,pile[|0]);
-				//	ds_list_delete(pile,0);
-				
-				//} else {
-				
-				//	pile[|0].goal_x = card_2_x;
-				//	pile[|0].goal_y = card_l1_y;
-		
-				//	ds_list_add(ai_hand_pile,pile[|0]);
-				//	ds_list_delete(pile,0);
-				//}
-				
-				//card_ai = ai_hand_pile[|1];
-				//ds_list_add(ai_shown_pile,ai_hand_pile[|1]);
-				//ds_list_delete(ai_hand_pile,1);
-				
-				// ai deal 1 card
-				
-				alarm[0] = 2 * room_speed;
-				
+					
+					alarm[0] = 2 * room_speed;
+					// 本code依靠此alarm运行，debug不出来为什么了但是请不要删
 			}
 			
-			player_deal_phase = true;
 
-		} else {
-		
+		} else if (player_status) {
 			player_deal_phase = true;
+		ds_list_add(textbox_manager.textbox_ls," ");
+			ds_list_add(textbox_manager.textbox_ls,"It is your turn...");
+			ds_list_add(textbox_manager.textbox_ls,"You can choose to");
+			ds_list_add(textbox_manager.textbox_ls,"draw or stand.");
 		
 		}
-		
-		
-		
 	}
 	
-	if (keyboard_check_pressed(ord("M"))) {
-		ds_list_shuffle(player_hand_pile);
-		for (var i =0;i<ds_list_size(player_hand_pile);i++) {
-			player_hand_pile[|i].goal_x = card_1_x + i* handcard_interval;
+	//if (ai_timer == 4 * room_speed) {
+				
+	//	// ai deal 1 card
+
+	//	ai_deal = irandom_range(0,1);
+	//	//ai_deal_pos = ai_deal;
+	//	if (ai_deal == 0) {
+	//		card_ai = ai_hand_pile[|0];
+	//		card_ai.goal_x = deal_x;
+	//		card_ai.goal_y = deal_y;
+	//		card_ai.shown = true;
+	//		//ai_deal_pos = 0;
+	//		ds_list_add(ai_shown_pile,ai_hand_pile[|0]);
+	//		ds_list_delete(ai_hand_pile,0);
+	//	} else 
+	//	if (ai_deal == 1) {
+	//		card_ai = ai_hand_pile[|1];
+	//		card_ai.goal_x = deal_x;
+	//		card_ai.goal_y = deal_y;
+	//		card_ai.shown = true;
+	//	ai_choice = card_ai.card_type;
+	//		//ai_deal_pos = 1;
+	//		//show_debug_message(ai_hand_pile[|0])
+	//		ds_list_add(ai_shown_pile,ai_hand_pile[|1]);
+	//		ds_list_delete(ai_hand_pile,1);
+	//		//card_ai = ai_shown_pile[|ds_list_size(ai_shown_pile)-1];
+	//	}
+	//	audio_play_sound(flipcard,0,false);
+	//	//show_debug_message(string(card_ai) + " card_ai");
+
+	//	ds_list_add(textbox_manager.textbox_ls,"PC show a card.");
+	//	//card_ai.goal_x = deal_x;
+	//	//card_ai.goal_y = deal_y;
+	//	//card_ai.shown = true;
+	//	//ai_choice = card_ai.card_type;
+	//	deal_x += deal_interval;
+
+
+	//}
+	
+	
+	if (ai_timer == 5 * room_speed) {
+		player_deal_phase = true;
+		
+		ds_list_add(textbox_manager.textbox_ls," ");
+		ds_list_add(textbox_manager.textbox_ls,"It is your turn...");
+		ds_list_add(textbox_manager.textbox_ls,"You can choose to");
+		ds_list_add(textbox_manager.textbox_ls,"draw or stand.");
+	}
+	
+	if (player_turn) {
+		if (mouse_check_button_pressed(mb_left)) {
+			butt_click = instance_position(mouse_x,mouse_y,button_shuffle);
+			if (butt_click != noone) {
+				ds_list_shuffle(player_hand_pile);
+				for (var i =0;i<ds_list_size(player_hand_pile);i++) {
+					player_hand_pile[|i].goal_x = card_1_x + i* handcard_interval;
+				}
+			}
 		}
 	}
+	
 	
 	
 	// player phase
 	if (player_deal_phase) {
-	if (keyboard_check_pressed(ord("Y"))) {
 		
-			pile[|0].goal_x = card_1_x;
-			pile[|0].goal_y = card_l2_y;
-			pile[|0].shown = true;
-			
-			ds_list_add(player_hand_pile,pile[|0]);
-			ds_list_delete(pile,0);
-			
-		//if (player_deal_pos == 0) {
-		//	audio_play_sound(flipcard,0,false);
-		//	pile[|0].goal_x = card_1_x;
-		//	pile[|0].goal_y = card_l2_y;
-		//	pile[|0].shown = true;
-			
-		//	ds_list_add(player_hand_pile,pile[|0]);
-		//	ds_list_delete(pile,0);
-				
-		//} else if (player_deal_pos == 1) {
-		//	audio_play_sound(flipcard,0,false);
-		//	pile[|0].goal_x = card_2_x;
-		//	pile[|0].goal_y = card_l2_y;
-		//	pile[|0].shown = true;
-	
-		//	ds_list_add(player_hand_pile,pile[|0]);
-		//	ds_list_delete(pile,0);
-			
-		//}
 		
-		audio_play_sound(flipcard,0,false);
-		player_hand_pile[|0].shown = true;
-		player_hand_pile[|0].dealing = true;
-		player_hand_pile[|1].shown = true;
-		player_hand_pile[|1].dealing = true;
+		player_turn = true;
+		ai_turn = false;
+		sign_ai_turn.visible = false;
+		sign_player_turn.visible = true;
 		
-		player_deal_status = false;
-	}
-	
-		else if (keyboard_check_pressed(ord("N"))) {
-			player_status = false;
-			player_deal_status = true;
+		if (mouse_check_button_pressed(mb_left)) {
+			butt_click = instance_position(mouse_x,mouse_y,button_draw);
+			if (butt_click != noone) {
+				pile[|0].goal_x = card_1_x + 0.5*handcard_interval;
+				pile[|0].goal_y = card_l2_y;
+				pile[|0].shown = true;
+			
+				ds_list_add(player_hand_pile,pile[|0]);
+				ds_list_delete(pile,0);
+			
+		
+				audio_play_sound(flipcard,0,false);
+				player_hand_pile[|0].shown = true;
+				player_hand_pile[|0].dealing = true;
+				player_hand_pile[|1].shown = true;
+				player_hand_pile[|1].dealing = true;
+		ds_list_add(textbox_manager.textbox_ls," ");
+				ds_list_add(textbox_manager.textbox_ls,"You choose to draw");
+				ds_list_add(textbox_manager.textbox_ls,"another card.");
+			
+		ds_list_add(textbox_manager.textbox_ls," ");
+				ds_list_add(textbox_manager.textbox_ls,"Now you can show a");
+				ds_list_add(textbox_manager.textbox_ls,"card to opponent.");
+			
+				player_deal_phase = false;
+				//phase finished, jump to deal
+			
+				//player_deal_status = false;
+			}
 		}
+
+		if (mouse_check_button_pressed(mb_left)) {
+			butt_click = instance_position(mouse_x,mouse_y,button_suspension);
+			if (butt_click != noone) {
+		ds_list_add(textbox_manager.textbox_ls," ");
+				ds_list_add(textbox_manager.textbox_ls,"You choose to stand.");
+				player_status = false;
+				player_deal_status = true;
+				// phase finished, jump to pc
+				player_deal_phase = false;
+			}
+		}
+
 	}
 	
 	if (ds_list_size(pile) == 0) {
@@ -251,7 +374,12 @@ if (timer > 3.3 * room_speed) {
 	
 
 if (!player_status && !ai_status) {
+	if (ai_reveal_timer == 0) {
 	
+		ds_list_add(textbox_manager.textbox_ls," ");
+		ds_list_add(textbox_manager.textbox_ls,"Game end.");
+		ds_list_add(textbox_manager.textbox_ls,"Settling points...");
+	}
 	// reveal ai card
 	if (ai_reveal_timer < ai_reveal_duration * room_speed) {
 		ai_reveal_timer++;
@@ -293,4 +421,8 @@ if (!player_status && !ai_status) {
 
 if (timer < duration * room_speed) {
 	timer ++;
+}
+
+if (ai_timer < ai_duration * room_speed) {
+	ai_timer ++;
 }

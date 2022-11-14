@@ -7,7 +7,7 @@
     "path": "sprites/turn/turn.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

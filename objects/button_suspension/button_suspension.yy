@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "button_suspension",
-  "spriteId": {
-    "name": "sus_ban",
-    "path": "sprites/sus_ban/sus_ban.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,

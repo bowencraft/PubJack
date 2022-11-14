@@ -15,8 +15,11 @@ deal_num = 0;
 
 card_random = ds_list_create();
 
-duration = 5;
+duration = 50;
 timer = 0;
+
+ai_duration = 10;
+ai_timer = ai_duration * room_speed;
 
 ai_deal = 0; // sequence - 0,1
 ai_deal_status = false;
@@ -43,32 +46,41 @@ player_reveal = false;
 player_point = 0;
 ai_point = 0;
 
+player_turn = false;
+ai_turn = false;
+
+ai_have_a = false;
+player_have_a = false;
+
+money = 100;
+goal_money = money;
+stake = 50;
 // ---- position setting begin -----
 
-card_interval = 2; // pixel
+card_interval = 3; // pixel
 deal_interval =20;
 
-init_x = 100;
-init_y = 400;
+init_x = 96;
+init_y = 190;
 
-card_l1_y = 150;
-card_l2_y = 550;
+card_l1_y = 0;
+card_l2_y = 432;
 
-card_1_x = 200;
-card_2_x = 340;
-handcard_interval = 140;
+card_1_x = 256;
+card_2_x = 328;
+handcard_interval = 72;
 
-deal_x = 340;
-deal_y = 295;
+deal_x = 288;
+deal_y = 162;
 
-player_deal_x = 340;
-player_deal_y = 405;
+player_deal_x = 288;
+player_deal_y = 280;
 
-ai_reveal_x = 220;
-ai_reveal_y = 295;
+ai_reveal_x = 216;
+ai_reveal_y = 178;
 
-player_reveal_x = 220;
-player_reveal_y = 405;
+player_reveal_x = 216;
+player_reveal_y = 280;
 
 //discard_x = 560;
 //discard_y = 350;

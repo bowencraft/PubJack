@@ -9,6 +9,6 @@ for (var i =0;i<ds_list_size(textbox_ls);i++) {
 	text_content += "\n";
 }
 
-draw_text_transformed(768,26,text_content,1,1,0);
+draw_text_transformed(764,26,text_content,1,1,0);
 
 
