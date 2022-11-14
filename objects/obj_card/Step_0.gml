@@ -47,7 +47,7 @@ if (shown) {
 } else {
 	sprite_index = spr_poker_back;
 }
-
+card_point = card_type +1;
 
 x = lerp(x,goal_x,0.5 * move_spd);
 y = lerp(y,goal_y,0.5 * move_spd);
@@ -75,4 +75,8 @@ if (dealing) {
 	}
 }
 
+}
+
+if (goal_x > card_pile_manager.init_x) {
+	depth = -goal_x;
 }

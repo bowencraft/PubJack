@@ -3,6 +3,7 @@
 
 shown = false;
 card_type = 0; // 0 -scissor, 1 -paper, 2 -rock
+card_point = 0;
 dealing = false;
 
 goal_x = x;
