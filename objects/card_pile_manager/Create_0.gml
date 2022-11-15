@@ -54,6 +54,8 @@ player_have_a = false;
 
 goal_money = global.money;
 stake = 50;
+
+//temp_player_count = 0;
 // ---- position setting begin -----
 
 card_interval = 3; // pixel

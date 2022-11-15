@@ -201,14 +201,14 @@ if (timer > 9 * room_speed) {
 	if (ai_timer == 0 * room_speed) {
 		player_turn = false;
 		ai_turn = true;
-		sign_ai_turn.visible = true;
-		sign_player_turn.visible = false;
 	}
 	
 	if (ai_timer == 0.5 * room_speed) {
 		ds_list_add(textbox_manager.textbox_ls," ");
 		ds_list_add(textbox_manager.textbox_ls,"It's PC's turn...");
 			audio_play_sound(notice,0,false);
+		sign_ai_turn.visible = true;
+		sign_player_turn.visible = false;
 	}
 	
 	if (ai_timer == 2 * room_speed) {
@@ -217,7 +217,36 @@ if (timer > 9 * room_speed) {
 		// ai choose whether continue
 		
 		if (ai_status) {
-			ai_deal = irandom_range(0,1);
+			
+			temp_player_count = 0;
+			for (var j=0; j<ds_list_size(player_shown_pile); j++) {
+				temp_card = ds_list_find_value(player_shown_pile,j);
+				show_debug_message(temp_card);
+				temp_player_count += ( temp_card.card_type+1 );
+			}
+			
+			temp_ai_count = 0;
+			for (var j=0; j<ds_list_size(ai_shown_pile); j++) {
+				temp_ai_count += ai_shown_pile[|j].card_type + 1;
+			}
+			temp_ai_count += ai_hand_pile[|0].card_type +1;
+			
+			
+			if (temp_ai_count < 18) {
+				ai_deal = 1;
+				
+			} else {
+				if (temp_player_count >= (temp_ai_count - 8)) {
+					ai_deal = irandom_range(0,1);
+				
+				} else {
+					ai_deal = 0;
+				
+				}
+			}
+			
+			
+			//ai_deal = irandom_range(0,1);
 			
 			if (ai_deal == 0) {
 				ai_status = false;

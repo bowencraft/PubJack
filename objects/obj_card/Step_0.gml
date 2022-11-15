@@ -1,6 +1,8 @@
 /// @description 在此处插入描述 
 // 你可以在此编辑器中写入代码 
 
+card_point = card_type +1;
+
 if (shown) {
 		//show_debug_message(string(card_type));
 	switch (card_type) {
@@ -36,18 +38,20 @@ if (shown) {
 		break;
 		case 10:
 			sprite_index = card_clubs_J;
+			card_point = 10;
 		break;
 		case 11:
 			sprite_index = card_clubs_Q;
+			card_point = 10;
 		break;
 		case 12:
 			sprite_index = card_clubs_K;
+			card_point = 10;
 		break;
 	}
 } else {
 	sprite_index = card_back;
 }
-card_point = card_type +1;
 
 x = lerp(x,goal_x,0.5 * move_spd);
 y = lerp(y,goal_y,0.5 * move_spd);
